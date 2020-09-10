@@ -1,3 +1,2 @@
-# gamePython
- Trabalho de PCA/Grupo7
-ATUALILAÇÃO
+# SmartStart
+ Projeto de um jogo para a proposta de trabalho de PCA
