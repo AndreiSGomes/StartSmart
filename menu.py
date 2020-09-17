@@ -15,11 +15,13 @@ def start_the_game():
     
 
 
-menu = pygame_menu.Menu(height=400,
+menu = pygame_menu.Menu(
+                        height=400,
                         width=800,
                         theme=pygame_menu.themes.THEME_GREEN,
                         onclose=pygame_menu.events.EXIT,
-                        title='Vamos acabar com o COVID!')
+                        title='War C-19!'
+                        )
 
 menu.add_text_input('Nome: ', default='StartSmart') #Nome de Usuário
 menu.add_button('Iniciar', start_the_game) # Iniciar o jogo
