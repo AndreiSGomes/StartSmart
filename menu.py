@@ -25,6 +25,7 @@ menu = pygame_menu.Menu(
 
 menu.add_text_input('Nome: ', default='StartSmart') #Nome de Usuário
 menu.add_button('Iniciar', start_the_game) # Iniciar o jogo
+menu.add_button('ASJDASD', None)
 menu.add_button('Sair', pygame_menu.events.EXIT) # Botão de sair com o ESC e o Botão de fechar da interface do jogo.
 
 if __name__ == '__main__':
