@@ -1,33 +1,126 @@
-#Bibliotecas importadas
-import os
 import pygame
-import pygame_menu
 
-pygame.init() # Iniciar o programa
-os.environ['SDL_VIDEO_CENTERED'] = '1' # Centralizador de Janela
-surface = pygame.display.set_mode((800, 400)) #Tamanho da Janela
-pygame.display.set_caption('WAR C-19') #Nome do jogo na janela
+class Menu():
+    def __init__(self, game):
+        self.game = game
+        self.mid_w, self.mid_h = self.game.DISPLAY_W / 2, self.game.DISPLAY_H / 2
+        self.run_display = True
+        self.cursor_rect = pygame.Rect(0, 0, 20, 20)
+        self.offset = - 100
+
+    def draw_cursor(self):
+        self.game.draw_text('*', 15, self.cursor_rect.x, self.cursor_rect.y)
+
+    def blit_screen(self):
+        self.game.window.blit(self.game.display, (0, 0))
+        pygame.display.update()
+        self.game.reset_keys()
+
+class MainMenu(Menu):
+    def __init__(self, game):
+        Menu.__init__(self, game)
+        self.state = "Iniciar"
+        self.startx, self.starty = self.mid_w, self.mid_h + 20
+        self.optionsx, self.optionsy = self.mid_w, self.mid_h + 60
+        self.creditsx, self.creditsy = self.mid_w, self.mid_h + 100
+        self.cursor_rect.midtop = (self.startx + self.offset, self.starty)
+
+    def display_menu(self):
+        self.run_display = True
+        while self.run_display:
+            self.game.check_events()
+            self.check_input()
+            self.game.display.fill(self.game.BLACK)
+            self.game.draw_text('Menu Inicial', 40, self.game.DISPLAY_W / 2, self.game.DISPLAY_H / 2 - 80)
+            self.game.draw_text("Jogar", 20, self.startx, self.starty)
+            self.game.draw_text("Configurar", 20, self.optionsx, self.optionsy)
+            self.game.draw_text("Criadores", 20, self.creditsx, self.creditsy)
+            self.draw_cursor()
+            self.blit_screen()
 
 
+    def move_cursor(self):
+        if self.game.DOWN_KEY:
+            if self.state == 'Iniciar':
+                self.cursor_rect.midtop = (self.optionsx + self.offset, self.optionsy)
+                self.state = 'Configurar'
+            elif self.state == 'Configurar':
+                self.cursor_rect.midtop = (self.creditsx + self.offset, self.creditsy)
+                self.state = 'Criadores'
+            elif self.state == 'Criadores':
+                self.cursor_rect.midtop = (self.startx + self.offset, self.starty)
+                self.state = 'Iniciar'
+        elif self.game.UP_KEY:
+            if self.state == 'Iniciar':
+                self.cursor_rect.midtop = (self.creditsx + self.offset, self.creditsy)
+                self.state = 'Criadores'
+            elif self.state == 'Configurar':
+                self.cursor_rect.midtop = (self.startx + self.offset, self.starty)
+                self.state = 'Iniciar'
+            elif self.state == 'Criadores':
+                self.cursor_rect.midtop = (self.optionsx + self.offset, self.optionsy)
+                self.state = 'Configurar'
 
-def start_the_game():
-    print('Jogo Iniciado')
-    
+    def check_input(self):
+        self.move_cursor()
+        if self.game.START_KEY:
+            if self.state == 'Iniciar':
+                self.game.playing = True
+            elif self.state == 'Configurar':
+                self.game.curr_menu = self.game.options
+            elif self.state == 'Criadores':
+                self.game.curr_menu = self.game.credits
+            self.run_display = False
 
+class OptionsMenu(Menu):
+    def __init__(self, game):
+        Menu.__init__(self, game)
+        self.state = 'Volume'
+        self.volx, self.voly = self.mid_w, self.mid_h + 20
+        self.controlsx, self.controlsy = self.mid_w, self.mid_h + 40
+        self.cursor_rect.midtop = (self.volx + self.offset, self.voly)
 
-menu = pygame_menu.Menu(
-                        height=400,
-                        width=800,
-                        theme=pygame_menu.themes.THEME_GREEN,
-                        onclose=pygame_menu.events.EXIT,
-                        title='War C-19!'
-                        )
+    def display_menu(self):
+        self.run_display = True
+        while self.run_display:
+            self.game.check_events()
+            self.check_input()
+            self.game.display.fill((0, 0, 0))
+            self.game.draw_text('Configurar', 20, self.game.DISPLAY_W / 2, self.game.DISPLAY_H / 2 - 30)
+            self.game.draw_text("Volume", 15, self.volx, self.voly)
+            self.game.draw_text("Controles", 15, self.controlsx, self.controlsy)
+            self.draw_cursor()
+            self.blit_screen()
 
-menu.add_text_input('Nome: ', default='StartSmart') #Nome de Usuário
-menu.add_button('Iniciar', start_the_game) # Iniciar o jogo
-menu.add_button('Adicional', None)
-menu.add_button('Adicional', None)
-menu.add_button('Sair', pygame_menu.events.EXIT) # Botão de sair com o ESC e o Botão de fechar da interface do jogo.
+    def check_input(self):
+        if self.game.BACK_KEY:
+            self.game.curr_menu = self.game.main_menu
+            self.run_display = False
+        elif self.game.UP_KEY or self.game.DOWN_KEY:
+            if self.state == 'Volume':
+                self.state = 'Controles'
+                self.cursor_rect.midtop = (self.controlsx + self.offset, self.controlsy)
+            elif self.state == 'Controles':
+                self.state = 'Volume'
+                self.cursor_rect.midtop = (self.volx + self.offset, self.voly)
+        elif self.game.START_KEY:
+            pass
 
-if __name__ == '__main__':
-    menu.mainloop(surface)
+class CreditsMenu(Menu):
+    def __init__(self, game):
+        Menu.__init__(self, game)
+
+    def display_menu(self):
+        self.run_display = True
+        while self.run_display:
+            self.game.check_events()
+            if self.game.START_KEY or self.game.BACK_KEY:
+                self.game.curr_menu = self.game.main_menu
+                self.run_display = False
+            self.game.display.fill(self.game.BLACK)
+            self.game.draw_text('Criadores', 20, self.game.DISPLAY_W / 2, self.game.DISPLAY_H / 4 - 20)
+            self.game.draw_text('Kaique Sousa Farias', 15, self.game.DISPLAY_W / 2, self.game.DISPLAY_H / 2 + 10)
+            self.game.draw_text('Weverton', 15, self.game.DISPLAY_W / 2, self.game.DISPLAY_H / 2 + 30)
+            self.game.draw_text('Pedro', 15, self.game.DISPLAY_W / 2, self.game.DISPLAY_H / 2 + 50)
+            self.game.draw_text('Andrei', 15, self.game.DISPLAY_W / 2, self.game.DISPLAY_H / 2 + 70)
+            self.blit_screen()
