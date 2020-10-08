@@ -37,8 +37,7 @@ class MainMenu(Menu):
             self.game.draw_text("Criadores", 20, self.creditsx, self.creditsy)
             self.draw_cursor()
             self.blit_screen()
-
-
+ 
     def move_cursor(self):
         if self.game.DOWN_KEY:
             if self.state == 'Iniciar':
@@ -119,8 +118,8 @@ class CreditsMenu(Menu):
                 self.run_display = False
             self.game.display.fill(self.game.BLACK)
             self.game.draw_text('Criadores', 20, self.game.DISPLAY_W / 2, self.game.DISPLAY_H / 4 - 20)
-            self.game.draw_text('Kaique Sousa Farias', 15, self.game.DISPLAY_W / 2, self.game.DISPLAY_H / 2 + 10)
-            self.game.draw_text('Weverton', 15, self.game.DISPLAY_W / 2, self.game.DISPLAY_H / 2 + 30)
-            self.game.draw_text('Pedro', 15, self.game.DISPLAY_W / 2, self.game.DISPLAY_H / 2 + 50)
-            self.game.draw_text('Andrei', 15, self.game.DISPLAY_W / 2, self.game.DISPLAY_H / 2 + 70)
+            self.game.draw_text('KAIQUE SOUSA FARIAS', 15, self.game.DISPLAY_W / 2, self.game.DISPLAY_H / 2 + 10)
+            self.game.draw_text('WEVERTON DE MELLO MACHADO', 15, self.game.DISPLAY_W / 2, self.game.DISPLAY_H / 2 + 30)
+            self.game.draw_text('PEDRO DE OLIVEIRA MORAES', 15, self.game.DISPLAY_W / 2, self.game.DISPLAY_H / 2 + 50)
+            self.game.draw_text('ANDREI DE SOUZA GOMES', 15, self.game.DISPLAY_W / 2, self.game.DISPLAY_H / 2 + 70)
             self.blit_screen()
