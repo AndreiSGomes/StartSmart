@@ -5,11 +5,11 @@ class Menu():
         self.game = game
         self.mid_w, self.mid_h = self.game.DISPLAY_W / 2, self.game.DISPLAY_H / 2
         self.run_display = True
-        self.cursor_rect = pygame.Rect(0, 0, 20, 20)
+        self.cursor_rect = pygame.Rect(0, 0, 130, 130)
         self.offset = - 100
 
     def draw_cursor(self):
-        self.game.draw_text('*', 15, self.cursor_rect.x, self.cursor_rect.y)
+        self.game.draw_text('→', 15, self.cursor_rect.x, self.cursor_rect.y)
 
     def blit_screen(self):
         self.game.window.blit(self.game.display, (0, 0))
@@ -33,41 +33,41 @@ class MainMenu(Menu):
             self.game.display.fill(self.game.BLACK)
             self.game.draw_text('Menu Inicial', 40, self.game.DISPLAY_W / 2, self.game.DISPLAY_H / 2 - 80)
             self.game.draw_text("Jogar", 20, self.startx, self.starty)
-            self.game.draw_text("Configurar", 20, self.optionsx, self.optionsy)
-            self.game.draw_text("Criadores", 20, self.creditsx, self.creditsy)
+            self.game.draw_text("Configurações", 20, self.optionsx, self.optionsy)
+            self.game.draw_text("Créditos", 20, self.creditsx, self.creditsy)
             self.draw_cursor()
             self.blit_screen()
  
-    def move_cursor(self):
+    def move_cursor(self): #Movimentação do Cursor (Setinha)
         if self.game.DOWN_KEY:
             if self.state == 'Iniciar':
                 self.cursor_rect.midtop = (self.optionsx + self.offset, self.optionsy)
-                self.state = 'Configurar'
-            elif self.state == 'Configurar':
+                self.state = 'Configurações'
+            elif self.state == 'Configurações':
                 self.cursor_rect.midtop = (self.creditsx + self.offset, self.creditsy)
-                self.state = 'Criadores'
-            elif self.state == 'Criadores':
+                self.state = 'Créditos'
+            elif self.state == 'Créditos':
                 self.cursor_rect.midtop = (self.startx + self.offset, self.starty)
                 self.state = 'Iniciar'
         elif self.game.UP_KEY:
             if self.state == 'Iniciar':
                 self.cursor_rect.midtop = (self.creditsx + self.offset, self.creditsy)
-                self.state = 'Criadores'
-            elif self.state == 'Configurar':
+                self.state = 'Créditos'
+            elif self.state == 'Configurações':
                 self.cursor_rect.midtop = (self.startx + self.offset, self.starty)
                 self.state = 'Iniciar'
-            elif self.state == 'Criadores':
+            elif self.state == 'Créditos':
                 self.cursor_rect.midtop = (self.optionsx + self.offset, self.optionsy)
-                self.state = 'Configurar'
+                self.state = 'Configurações'
 
     def check_input(self):
         self.move_cursor()
         if self.game.START_KEY:
             if self.state == 'Iniciar':
                 self.game.playing = True
-            elif self.state == 'Configurar':
+            elif self.state == 'Configurações':
                 self.game.curr_menu = self.game.options
-            elif self.state == 'Criadores':
+            elif self.state == 'Créditos':
                 self.game.curr_menu = self.game.credits
             self.run_display = False
 
@@ -85,7 +85,7 @@ class OptionsMenu(Menu):
             self.game.check_events()
             self.check_input()
             self.game.display.fill((0, 0, 0))
-            self.game.draw_text('Configurar', 20, self.game.DISPLAY_W / 2, self.game.DISPLAY_H / 2 - 30)
+            self.game.draw_text('Configurações', 20, self.game.DISPLAY_W / 2, self.game.DISPLAY_H / 2 - 30)
             self.game.draw_text("Volume", 15, self.volx, self.voly)
             self.game.draw_text("Controles", 15, self.controlsx, self.controlsy)
             self.draw_cursor()
@@ -117,7 +117,7 @@ class CreditsMenu(Menu):
                 self.game.curr_menu = self.game.main_menu
                 self.run_display = False
             self.game.display.fill(self.game.BLACK)
-            self.game.draw_text('Criadores', 20, self.game.DISPLAY_W / 2, self.game.DISPLAY_H / 4 - 20)
+            self.game.draw_text('Créditos', 20, self.game.DISPLAY_W / 2, self.game.DISPLAY_H / 4 - 20)
             self.game.draw_text('KAIQUE SOUSA FARIAS', 15, self.game.DISPLAY_W / 2, self.game.DISPLAY_H / 2 + 10)
             self.game.draw_text('WEVERTON DE MELLO MACHADO', 15, self.game.DISPLAY_W / 2, self.game.DISPLAY_H / 2 + 30)
             self.game.draw_text('PEDRO DE OLIVEIRA MORAES', 15, self.game.DISPLAY_W / 2, self.game.DISPLAY_H / 2 + 50)

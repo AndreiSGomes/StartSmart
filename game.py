@@ -5,12 +5,13 @@ from menu import * #pegando o arquivo Menu / o uso de "*" aparentemente é para 
 class Game():
     def __init__(self):
         pygame.init()
+        pygame.display.set_caption("War C-19")
         self.running, self.playing = True, False
         self.UP_KEY, self.DOWN_KEY, self.START_KEY, self.BACK_KEY = False, False, False, False
-        self.DISPLAY_W, self.DISPLAY_H = 480, 270 # Tamanho da tela
+        self.DISPLAY_W, self.DISPLAY_H = 720, 480 # Tamanho da tela
         self.display = pygame.Surface((self.DISPLAY_W,self.DISPLAY_H))
         self.window = pygame.display.set_mode(((self.DISPLAY_W,self.DISPLAY_H)))
-        self.font_name = 'fonte/8-BIT WONDER.TTF'
+        self.font_name = 'fonte/PressStart2P-vaV7.ttf'
         #self.font_name = pygame.font.get_default_font()
         self.BLACK, self.WHITE = (0, 0, 0), (255, 255, 255) #Definindo cores
         self.main_menu = MainMenu(self) #Classes
