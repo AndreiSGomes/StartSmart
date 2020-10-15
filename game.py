@@ -1,5 +1,5 @@
-import pygame
-from menu import *
+import pygame #Biblioteca pygame
+from menu import * #pegando o arquivo Menu / o uso de "*" aparentemente é para incluir tudo
 
 
 class Game():
@@ -7,13 +7,13 @@ class Game():
         pygame.init()
         self.running, self.playing = True, False
         self.UP_KEY, self.DOWN_KEY, self.START_KEY, self.BACK_KEY = False, False, False, False
-        self.DISPLAY_W, self.DISPLAY_H = 480, 270
+        self.DISPLAY_W, self.DISPLAY_H = 480, 270 # Tamanho da tela
         self.display = pygame.Surface((self.DISPLAY_W,self.DISPLAY_H))
         self.window = pygame.display.set_mode(((self.DISPLAY_W,self.DISPLAY_H)))
         self.font_name = 'fonte/8-BIT WONDER.TTF'
         #self.font_name = pygame.font.get_default_font()
-        self.BLACK, self.WHITE = (0, 0, 0), (255, 255, 255)
-        self.main_menu = MainMenu(self)
+        self.BLACK, self.WHITE = (0, 0, 0), (255, 255, 255) #Definindo cores
+        self.main_menu = MainMenu(self) #Classes
         self.options = OptionsMenu(self)
         self.credits = CreditsMenu(self)
         self.curr_menu = self.main_menu
@@ -49,7 +49,7 @@ class Game():
     def reset_keys(self):
         self.UP_KEY, self.DOWN_KEY, self.START_KEY, self.BACK_KEY = False, False, False, False
 
-    def draw_text(self, text, size, x, y ):
+    def draw_text(self, text, size, x, y ): #Cor da letra, tamanho
         font = pygame.font.Font(self.font_name,size)
         text_surface = font.render(text, True, self.WHITE)
         text_rect = text_surface.get_rect()
