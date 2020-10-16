@@ -25,12 +25,12 @@ class MainMenu(Menu):
         self.creditsx, self.creditsy = self.mid_w, self.mid_h + 100
         self.cursor_rect.midtop = (self.startx + self.offset, self.starty)
 
-    def display_menu(self):
+    def display_menu(self): # Aparência do Menu
         self.run_display = True
         while self.run_display:
             self.game.check_events()
             self.check_input()
-            self.game.display.fill(self.game.BLACK)
+            self.game.display.fill(self.game.BLACK) #Preenchendo tela da cor preta
             self.game.draw_text('Menu Inicial', 40, self.game.DISPLAY_W / 2, self.game.DISPLAY_H / 2 - 80)
             self.game.draw_text("Jogar", 20, self.startx, self.starty)
             self.game.draw_text("Configurações", 20, self.optionsx, self.optionsy)
