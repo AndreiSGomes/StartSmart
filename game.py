@@ -1,4 +1,4 @@
-import pygame #Biblioteca pygame
+import pygame, sys #Biblioteca pygame
 from menu import * #pegando o arquivo Menu / o uso de "*" aparentemente é para incluir tudo
 
 
@@ -30,8 +30,6 @@ class Game():
             pygame.display.update()
             self.reset_keys()
 
-
-
     def check_events(self):
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
@@ -40,11 +38,11 @@ class Game():
             if event.type == pygame.KEYDOWN:
                 if event.key == pygame.K_RETURN:
                     self.START_KEY = True
-                if event.key == pygame.K_BACKSPACE:
+                if event.key == pygame.K_BACKSPACE or event.key == pygame.K_ESCAPE:
                     self.BACK_KEY = True
-                if event.key == pygame.K_DOWN:
+                if event.key == pygame.K_DOWN or event.key == pygame.K_s:
                     self.DOWN_KEY = True
-                if event.key == pygame.K_UP:
+                if event.key == pygame.K_UP or event.key == pygame.K_w:
                     self.UP_KEY = True
 
     def reset_keys(self):
