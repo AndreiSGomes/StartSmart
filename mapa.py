@@ -13,8 +13,10 @@ class Cenario(pygame.sprite.Sprite):
 
     def update(self):
         self.rect.move_ip(self.vel_fundo, 0)
-        if self.rect.right <= 900:
-            self.rect.right = 1300
+        if self.rect.right <= 790:
+            self.rect.right = 2400
+        if self.rect.left >= 0:
+            self.rect.right = 2000
 
 
 

@@ -6,7 +6,7 @@ from pygame.locals import *
 
 
 # # #  CONFIGURAÇÕES DE TELA ---------------------------------------------
-larguraTela, alturaTela = 1240, 720
+larguraTela, alturaTela = 800, 600
 metadeLargura = larguraTela / 2
 metadeAltura = alturaTela / 2
 areaTela = larguraTela * alturaTela
@@ -22,7 +22,7 @@ BLACK = (0, 0, 0)
 
 
 # # # CENÁRIO ----------------------------------------------------------------------------------
-cenarioJogo = Cenario("cenario.png")
+cenarioJogo = Cenario("cena.png")
 cenarioJogo_group = pygame.sprite.Group()
 cenarioJogo_group.add(cenarioJogo)
 fundo_velocidade = 0
@@ -30,11 +30,12 @@ fundo_velocidade = 0
 
 # # # PERSONAGEM -----------------------------------------------------------------------------------
 
-parado = carregarImagem("standing", 1)
-andandoFrente = carregarImagem("R", 9)
-andandoTras = carregarImagem("L", 9)
+parado = carregarImagem("parado", 1)
+andandoFrente = carregarImagem("frente", 4)
+andandoTras = carregarImagem("tras", 4)
 
-personagem = Jogador(0, 625, parado)
+personagem = Jogador(150, 418, parado)
+velocidadePersonagemY = 10
 personagem_group = pygame.sprite.Group()
 personagem_group.add(personagem)
 
@@ -71,6 +72,8 @@ while True:
                 personagem.mudarImagem(parado)
 
 
+
+
 # # # ROLAGEM DO CENÁRIO ------------------------------------------------------------------
 
 
@@ -82,7 +85,6 @@ while True:
 
     cenarioJogo.update()
     personagem.update()
-
 
     pygame.display.flip()
     CLOCK.tick(FPS)
