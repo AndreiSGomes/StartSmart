@@ -34,7 +34,7 @@ parado = carregarImagem("parado", 1)
 andandoFrente = carregarImagem("frente", 4)
 andandoTras = carregarImagem("tras", 4)
 
-personagem = Jogador(100, 408, parado)
+personagem = Jogador(318, 408, parado)
 velocidadePersonagemY = 10
 personagem_group = pygame.sprite.Group()
 personagem_group.add(personagem)
