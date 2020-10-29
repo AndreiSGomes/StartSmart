@@ -22,7 +22,7 @@ BLACK = (0, 0, 0)
 
 
 # # # CENÁRIO ----------------------------------------------------------------------------------
-cenarioJogo = Cenario("cena.png")
+cenarioJogo = Cenario("cena2.png")
 cenarioJogo_group = pygame.sprite.Group()
 cenarioJogo_group.add(cenarioJogo)
 fundo_velocidade = 0
@@ -34,7 +34,7 @@ parado = carregarImagem("parado", 1)
 andandoFrente = carregarImagem("frente", 4)
 andandoTras = carregarImagem("tras", 4)
 
-personagem = Jogador(150, 418, parado)
+personagem = Jogador(100, 408, parado)
 velocidadePersonagemY = 10
 personagem_group = pygame.sprite.Group()
 personagem_group.add(personagem)
