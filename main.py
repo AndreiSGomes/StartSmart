@@ -22,7 +22,7 @@ BLACK = (0, 0, 0)
 
 
 # # # CENÁRIO ----------------------------------------------------------------------------------
-cenarioJogo = Cenario("cena2.png")
+cenarioJogo = Cenario("cena.png")
 cenarioJogo_group = pygame.sprite.Group()
 cenarioJogo_group.add(cenarioJogo)
 fundo_velocidade = 0
