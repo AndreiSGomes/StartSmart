@@ -4,6 +4,12 @@ from mapa import Cenario
 from jogadores import Jogador, carregarImagem
 from pygame.locals import *
 
+#Musica
+import pygame # importei o pygame
+pygame.init() # iniciando o pygame
+pygame.mixer.music.load('sounds/Wandering-the-Streets_Looping.mp3')
+pygame.mixer.music.play()
+#Musica /
 
 # # #  CONFIGURAÇÕES DE TELA ---------------------------------------------
 larguraTela, alturaTela = 800, 600
