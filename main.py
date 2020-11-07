@@ -104,7 +104,6 @@ while True:
 
     cenarioJogo_group.draw(tela)      # DESENHAR PLANO DE FUNDO DO JOGO
     personagem_group.draw(tela)       # DESENHAR PERSONAGEM
-    tela.blit(texto, pos_texto)  # tempo
     tela.blit(texto, pos_texto)       # tempo
 
     cenarioJogo.update()
