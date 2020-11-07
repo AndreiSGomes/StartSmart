@@ -11,6 +11,7 @@ pygame.mixer.music.load('sounds/Wandering-the-Streets_Looping.mp3')
 pygame.mixer.music.play()
 #Musica /
 
+
 # # #  CONFIGURAÇÕES DE TELA ---------------------------------------------
 larguraTela, alturaTela = 800, 600
 metadeLargura = larguraTela / 2
@@ -33,6 +34,8 @@ cenarioJogo_group = pygame.sprite.Group()
 cenarioJogo_group.add(cenarioJogo)
 fundo_velocidade = 0
 
+timer = 0 #tempo
+tempo_segundo = 0#tempo
 
 # # # PERSONAGEM -----------------------------------------------------------------------------------
 
@@ -45,10 +48,16 @@ velocidadePersonagemY = 10
 personagem_group = pygame.sprite.Group()
 personagem_group.add(personagem)
 
+font = pygame.font.SysFont('arial black', 30) #tempo
+texto = font.render("Tempo: ", True, (255, 255, 255), (0, 0, 0)) #tempo
+pos_texto = texto.get_rect() #tempo
+pos_texto.center = (66, 50) #tempo
+
 
 
 # # # MOVIMENTAÇÃO ----------------------------------------------------------------
 while True:
+    #pygame.time.delay(50)
 
     # # # FECHAR TELA ------------------------------------------------------------
     for i in pygame.event.get():
@@ -76,7 +85,14 @@ while True:
                 fundo_velocidade = 0
                 cenarioJogo.velocidadeFundo(fundo_velocidade)
                 personagem.mudarImagem(parado)
-                
+
+        if (timer <20): #tempo
+            timer += 1
+        else: #tempo
+	        tempo_segundo +=1 #tempo
+	        texto = font.render("Tempo: " +str(tempo_segundo), True, (255, 0, 255), (1, 1,500))   #tempo
+
+	        timer = 0 #tempo
 
 
 
@@ -88,7 +104,7 @@ while True:
 
     cenarioJogo_group.draw(tela)      # DESENHAR PLANO DE FUNDO DO JOGO
     personagem_group.draw(tela)       # DESENHAR PERSONAGEM
-
+    tela.blit(texto, pos_texto)  # tempo
 
     cenarioJogo.update()
     personagem.update()
