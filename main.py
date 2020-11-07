@@ -70,6 +70,7 @@ while True:
                 fundo_velocidade = 0
                 cenarioJogo.velocidadeFundo(fundo_velocidade)
                 personagem.mudarImagem(parado)
+                
 
 
 
