@@ -49,7 +49,7 @@ personagem_group = pygame.sprite.Group()
 personagem_group.add(personagem)
 
 font = pygame.font.SysFont('arial black', 30) #tempo
-texto = font.render("Tempo: ", True, (255, 255, 255), (0, 0, 0)) #tempo
+texto = font.render("Tempo: ", True, (30,144,255),  (1, 1,500)) #tempo
 pos_texto = texto.get_rect() #tempo
 pos_texto.center = (66, 50) #tempo
 
@@ -90,7 +90,7 @@ while True:
             timer += 1
         else: #tempo
 	        tempo_segundo +=1 #tempo
-	        texto = font.render("Tempo: " +str(tempo_segundo), True, (255, 0, 255), (1, 1,500))   #tempo
+	        texto = font.render("Tempo: " +str(tempo_segundo), True, (30,144,255), (1, 1,500))   #tempo
 
 	        timer = 0 #tempo
 
