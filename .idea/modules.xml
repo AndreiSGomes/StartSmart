@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/updategame.iml" filepath="$PROJECT_DIR$/.idea/updategame.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/StartSmart.iml" filepath="$PROJECT_DIR$/.idea/StartSmart.iml" />
     </modules>
   </component>
 </project>
