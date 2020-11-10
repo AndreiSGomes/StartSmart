@@ -54,6 +54,14 @@ pos_texto = texto.get_rect() #tempo
 pos_texto.center = (66, 50) #tempo
 
 
+# # # INIMIGO -----------------------------------------------------------------------------------
+
+inimigo = pygame.image.load('walk1.png') #adicionando o inimigo
+pos_x = 150 #posição que o inimigo vai aparecer lado
+pos_y = 380 #posição que o inimigo vai aparecer cima e baixo
+
+
+
 
 # # # MOVIMENTAÇÃO ----------------------------------------------------------------
 while True:
@@ -105,6 +113,7 @@ while True:
     cenarioJogo_group.draw(tela)      # DESENHAR PLANO DE FUNDO DO JOGO
     personagem_group.draw(tela)       # DESENHAR PERSONAGEM
     tela.blit(texto, pos_texto)       # tempo
+    tela.blit(inimigo, (pos_x, pos_y)) #inimigo
 
     cenarioJogo.update()
     personagem.update()
