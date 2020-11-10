@@ -1,103 +1,53 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="AutoImportSettings">
-    <option name="autoReloadType" value="SELECTIVE" />
-  </component>
   <component name="ChangeListManager">
-    <list default="true" id="276213d4-0475-4e20-9d98-b0dea798d2c3" name="Default Changelist" comment="" />
+    <list default="true" id="66aa389e-76d6-4ed5-9c04-5d0b2260523c" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/StartSmart.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/aws.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/character/Frame Character - Enemy.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/character/Frame Character - Player - Mask.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/character/Frame Character - Player - No Mask.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/cena.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/music.mp3" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/person/frente (1).png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/person/frente (2).png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/person/frente (3).png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/person/frente (4).png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/person/parado (1).png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/person/tras (1).png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/person/tras (2).png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/person/tras (3).png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/person/tras (4).png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/person/walk1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/jogadores.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mapa.py" beforeDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="FileTemplateManagerImpl">
-    <option name="RECENT_TEMPLATES">
-      <list>
-        <option value="Python Script" />
-      </list>
-    </option>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="ProjectId" id="1hHuwG4Xgdy1C3DwwRvQkqvsWk9" />
+  <component name="ProjectId" id="1k79tbTVWOxCIWyntXD1Wca1i51" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
-    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
-    <property name="ToolWindowPython Console.ShowToolbar" value="false" />
-    <property name="com.intellij.ide.scratch.LRUPopupBuilder$1/New Scratch File" value="Python" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
-    <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
-  </component>
-  <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\Users\Andrei\Desktop" />
-    </key>
   </component>
   <component name="RunManager" selected="Python.main">
-    <configuration name="JOGO06" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
-      <module name="Projects_Python" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$USER_HOME$/Downloads/StartSmart-Jogo/PCA-GRUPO7" />
-      <option name="IS_MODULE_SDK" value="false" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$USER_HOME$/Downloads/StartSmart-Jogo/PCA-GRUPO7/JOGO06.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
-    <configuration name="code_organized" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
-      <module name="Projects_Python" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="IS_MODULE_SDK" value="false" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/code_organized.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="true" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
-    <configuration name="main (1)" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
-      <module name="Projects_Python" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$USER_HOME$/Downloads/jogos-pygame-master" />
-      <option name="IS_MODULE_SDK" value="false" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$USER_HOME$/Downloads/jogos-pygame-master/main.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
     <configuration name="main" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
-      <module name="Projects_Python" />
+      <module name="updategame" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <envs>
@@ -117,18 +67,21 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="simple_code" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
-      <module name="Projects_Python" />
+    <configuration name="novoTeste" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="updategame" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
-      <option name="SDK_HOME" value="C:\Users\Andrei\AppData\Local\Programs\Python\Python38\python.exe" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="IS_MODULE_SDK" value="false" />
+      <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/simple_code.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/novoTeste.py" />
       <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="true" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
       <option name="MODULE_MODE" value="false" />
       <option name="REDIRECT_INPUT" value="false" />
@@ -138,87 +91,39 @@
     <recent_temporary>
       <list>
         <item itemvalue="Python.main" />
-        <item itemvalue="Python.simple_code" />
-        <item itemvalue="Python.code_organized" />
-        <item itemvalue="Python.code_organized" />
-        <item itemvalue="Python.code_organized" />
+        <item itemvalue="Python.novoTeste" />
       </list>
     </recent_temporary>
   </component>
-  <component name="SpellCheckerSettings" BundledDictionaries="0" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" Dictionaries="0" CorrectionsLimit="5" DefaultDictionary="application-level" UseSingleDictionary="true" />
   <component name="SvnConfiguration">
     <configuration />
   </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="276213d4-0475-4e20-9d98-b0dea798d2c3" name="Default Changelist" comment="" />
-      <created>1599680575447</created>
+      <changelist id="66aa389e-76d6-4ed5-9c04-5d0b2260523c" name="Default Changelist" comment="" />
+      <created>1605040978024</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1599680575447</updated>
+      <updated>1605040978024</updated>
     </task>
     <servers />
   </component>
   <component name="WindowStateProjectService">
-    <state x="439" y="44" key="#code_organized" timestamp="1603580785530">
+    <state width="1419" height="206" key="GridCell.Tab.0.bottom" timestamp="1605041386236">
       <screen x="0" y="0" width="1440" height="860" />
     </state>
-    <state x="439" y="44" key="#code_organized/0.0.1440.860@0.0.1440.860" timestamp="1603580785530" />
-    <state x="348" y="90" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1599759422002">
+    <state width="1419" height="206" key="GridCell.Tab.0.bottom/0.0.1440.860@0.0.1440.860" timestamp="1605041386236" />
+    <state width="1419" height="206" key="GridCell.Tab.0.center" timestamp="1605041386236">
       <screen x="0" y="0" width="1440" height="860" />
     </state>
-    <state x="348" y="90" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1440.860@0.0.1440.860" timestamp="1599759422002" />
-    <state x="439" y="44" key="#simple_code" timestamp="1603580760189">
+    <state width="1419" height="206" key="GridCell.Tab.0.center/0.0.1440.860@0.0.1440.860" timestamp="1605041386236" />
+    <state width="1419" height="206" key="GridCell.Tab.0.left" timestamp="1605041386236">
       <screen x="0" y="0" width="1440" height="860" />
     </state>
-    <state x="439" y="44" key="#simple_code/0.0.1440.860@0.0.1440.860" timestamp="1603580760189" />
-    <state x="800" y="160" key="FileChooserDialogImpl" timestamp="1603584579021">
+    <state width="1419" height="206" key="GridCell.Tab.0.left/0.0.1440.860@0.0.1440.860" timestamp="1605041386236" />
+    <state width="1419" height="206" key="GridCell.Tab.0.right" timestamp="1605041386236">
       <screen x="0" y="0" width="1440" height="860" />
     </state>
-    <state x="800" y="160" key="FileChooserDialogImpl/0.0.1440.860@0.0.1440.860" timestamp="1603584579021" />
-    <state width="768" height="206" key="GridCell.Tab.0.bottom" timestamp="1603742530408">
-      <screen x="0" y="0" width="1440" height="860" />
-    </state>
-    <state width="768" height="206" key="GridCell.Tab.0.bottom/0.0.1440.860@0.0.1440.860" timestamp="1603742530408" />
-    <state width="768" height="206" key="GridCell.Tab.0.center" timestamp="1603742530408">
-      <screen x="0" y="0" width="1440" height="860" />
-    </state>
-    <state width="768" height="206" key="GridCell.Tab.0.center/0.0.1440.860@0.0.1440.860" timestamp="1603742530408" />
-    <state width="768" height="206" key="GridCell.Tab.0.left" timestamp="1603742530407">
-      <screen x="0" y="0" width="1440" height="860" />
-    </state>
-    <state width="768" height="206" key="GridCell.Tab.0.left/0.0.1440.860@0.0.1440.860" timestamp="1603742530407" />
-    <state width="768" height="206" key="GridCell.Tab.0.right" timestamp="1603742530408">
-      <screen x="0" y="0" width="1440" height="860" />
-    </state>
-    <state width="768" height="206" key="GridCell.Tab.0.right/0.0.1440.860@0.0.1440.860" timestamp="1603742530408" />
-    <state width="1419" height="276" key="GridCell.Tab.1.bottom" timestamp="1602642432701">
-      <screen x="0" y="0" width="1440" height="860" />
-    </state>
-    <state width="1419" height="276" key="GridCell.Tab.1.bottom/0.0.1440.860@0.0.1440.860" timestamp="1602642432701" />
-    <state width="1419" height="276" key="GridCell.Tab.1.center" timestamp="1602642432701">
-      <screen x="0" y="0" width="1440" height="860" />
-    </state>
-    <state width="1419" height="276" key="GridCell.Tab.1.center/0.0.1440.860@0.0.1440.860" timestamp="1602642432701" />
-    <state width="1419" height="276" key="GridCell.Tab.1.left" timestamp="1602642432701">
-      <screen x="0" y="0" width="1440" height="860" />
-    </state>
-    <state width="1419" height="276" key="GridCell.Tab.1.left/0.0.1440.860@0.0.1440.860" timestamp="1602642432701" />
-    <state width="1419" height="276" key="GridCell.Tab.1.right" timestamp="1602642432701">
-      <screen x="0" y="0" width="1440" height="860" />
-    </state>
-    <state width="1419" height="276" key="GridCell.Tab.1.right/0.0.1440.860@0.0.1440.860" timestamp="1602642432701" />
-    <state x="223" y="75" key="SettingsEditor" timestamp="1603580796673">
-      <screen x="0" y="0" width="1440" height="860" />
-    </state>
-    <state x="223" y="75" key="SettingsEditor/0.0.1440.860@0.0.1440.860" timestamp="1603580796673" />
-    <state x="416" y="254" key="com.intellij.ide.util.TipDialog" timestamp="1603584554625">
-      <screen x="0" y="0" width="1440" height="860" />
-    </state>
-    <state x="416" y="254" key="com.intellij.ide.util.TipDialog/0.0.1440.860@0.0.1440.860" timestamp="1603584554625" />
-    <state x="710" y="173" width="672" height="678" key="search.everywhere.popup" timestamp="1602800323840">
-      <screen x="0" y="0" width="1440" height="860" />
-    </state>
-    <state x="710" y="173" width="672" height="678" key="search.everywhere.popup/0.0.1440.860@0.0.1440.860" timestamp="1602800323840" />
+    <state width="1419" height="206" key="GridCell.Tab.0.right/0.0.1440.860@0.0.1440.860" timestamp="1605041386236" />
   </component>
 </project>
