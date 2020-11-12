@@ -57,11 +57,14 @@ pos_texto.center = (66, 50) #tempo
 # # # INIMIGO -----------------------------------------------------------------------------------
 
 inimigo = pygame.image.load('walk1.png') #adicionando o inimigo
-pos_x = 150 #posição que o inimigo vai aparecer lado
-pos_y = 380 #posição que o inimigo vai aparecer cima e baixo
+pos_x = 150 #posição que o inimigo vai aparecer  (eixo lado esquerdo e direita )
+pos_y = 380 #posição que o inimigo vai aparecer (eixo cima e baixo )
+velocidade_outros = 5 # velocidade do inimigo
 
-
-
+inimigolado = pygame.image.load('infectado01.png') #adicionando o inimigo
+pos_xx = -500 #posição que o inimigo vai aparecer  (eixo lado esquerdo e direita )
+pos_yy = 380 #posição que o inimigo vai aparecer (eixo cima e baixo )
+velocidade_outros2 = 2
 
 # # # MOVIMENTAÇÃO ----------------------------------------------------------------
 while True:
@@ -94,6 +97,14 @@ while True:
                 cenarioJogo.velocidadeFundo(fundo_velocidade)
                 personagem.mudarImagem(parado)
 
+        if (pos_y <= 200): #inimigo
+            pos_y = 600 #inimigo
+        pos_y -= velocidade_outros #inimigo
+
+        if (pos_xx <= 200): #inimigo pro lado
+            pos_xx = 600 #inimigo pro lado
+        pos_xx += velocidade_outros2 #inimigo andar pra frente
+
         if (timer <20): #tempo
             timer += 1
         else: #tempo
@@ -110,10 +121,11 @@ while True:
 
     tela.fill(BLACK)
 
-    cenarioJogo_group.draw(tela)      # DESENHAR PLANO DE FUNDO DO JOGO
-    personagem_group.draw(tela)       # DESENHAR PERSONAGEM
-    tela.blit(texto, pos_texto)       # tempo
-    tela.blit(inimigo, (pos_x, pos_y)) #inimigo
+    cenarioJogo_group.draw(tela)       # DESENHAR PLANO DE FUNDO DO JOGO
+    personagem_group.draw(tela)        # DESENHAR PERSONAGEM
+    tela.blit(texto, pos_texto)        # tempo
+    tela.blit(inimigo, (pos_x, pos_y)) # inimigo
+    tela.blit(inimigolado, (pos_xx, pos_yy)) # infectado
 
     cenarioJogo.update()
     personagem.update()
