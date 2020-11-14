@@ -79,7 +79,7 @@ class MainMenu(Menu):
             elif self.state == 'Créditos':
                 self.game.curr_menu = self.game.credits
             elif self.state == 'Sair':
-                self.game.exiting = True
+                self.game.exiting = sys.exit()
             self.run_display = False
 
 class OptionsMenu(Menu):
