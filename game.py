@@ -1,8 +1,6 @@
 import pygame #Biblioteca pygame
 from menu import * #pegando o arquivo Menu / o uso de "*" aparentemente é para incluir tudo
 from pygame.locals import* #
-from sys import exit
-from random import randint # Números aleatórios / Números entre X e Y
 import math, random, sys, os
 
 class Game():
@@ -27,9 +25,6 @@ class Game():
             self.check_events()
             if self.START_KEY:
                 self.playing= False
-            self.display.fill(self.BLACK)
-            self.draw_text('Obrigado por Jogar', 20, self.DISPLAY_W/2, self.DISPLAY_H/2)
-            self.window.blit(self.display, (0,0))
 #INICIO
             # # #  CONFIGURAÇÕES DE TELA ------------------------------------------------------------------
             larguraTela, alturaTela = 1000, 500
