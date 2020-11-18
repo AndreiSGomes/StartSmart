@@ -176,14 +176,12 @@ class Game():
 
             enemies = []
 
-            # # # LOOP ------------------------------------------------------------------------
-            run = True
-            while run:
-
-                # # # FECHAR TELA ------------------------------------------------------------
-                for event in pygame.event.get():
+            #Fechar jogo
+            while True:
+                events = pygame.event.get()
+                for event in events:
                     if event.type == pygame.QUIT:
-                        run = False
+                        sys.exit(0)
 
                 #Input
                 userInput = pygame.key.get_pressed()
