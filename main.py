@@ -5,3 +5,5 @@ g = Game() #facilitar a bagaça
 while g.running:
     g.curr_menu.display_menu()
     g.game_loop()
+
+pygame.quit()
