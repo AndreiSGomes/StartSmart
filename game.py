@@ -27,7 +27,7 @@ class Game():
                 self.playing= False
 #INICIO
             # # #  CONFIGURAÇÕES DE TELA ------------------------------------------------------------------
-            larguraTela, alturaTela = 1000, 500
+            larguraTela, alturaTela = 1000, 576
             metadeLargura = larguraTela / 2
             metadeAltura = alturaTela / 2
             areaTela = larguraTela * alturaTela
