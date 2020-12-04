@@ -92,6 +92,7 @@ class OptionsMenu(Menu):
         self.rightx, self.righty = self.mid_w, self.mid_h + 60
         self.leftx, self.lefty = self.mid_w, self.mid_h + 90
         self.shotx, self.shoty = self.mid_w, self.mid_h + 120
+        self.shotz, self.shoth = self.mid_w, self.mid_h + 150
            
     def display_menu(self):
         self.run_display = True
@@ -103,7 +104,8 @@ class OptionsMenu(Menu):
             self.game.draw_text("Teclado", 30, self.arrowx, self.arrowy)
             self.game.draw_text("Andar para Direira:  →", 15, self.rightx, self.righty)
             self.game.draw_text("Andar para Esquerda: ←", 15, self.leftx, self.lefty)
-            self.game.draw_text("Disparar Cura:  BARRA DE ESPAÇO", 15, self.shotx, self.shoty)
+            self.game.draw_text("Disparar Cura:  F", 15, self.shotx, self.shoty)
+            self.game.draw_text("Pular:  Barra de Espaço", 15, self.shotz, self.shoth)
             self.game.draw_text("Voltar: Backspace", 10, self.mid_w - 200, self.mid_h + 190)
             self.game.draw_text("Avançar: Enter", 10, self.mid_w + 200, self.mid_h + 190)
             self.blit_screen()
