@@ -47,15 +47,16 @@ class Game():
             # pygame.event.wait()
 
             # # # PERSONAGEM ---------------------------------------------------------------------------------
-            left = [pygame.image.load(os.path.join('Personagens', 'Tras1.png')),
-                    pygame.image.load(os.path.join('Personagens', 'Tras2.png')),
-                    pygame.image.load(os.path.join('Personagens', 'Tras3.png')),
-                    pygame.image.load(os.path.join('Personagens', 'Tras4.png'))
+            scale_hero=[100,100] 
+            left = [pygame.transform.scale(pygame.image.load(os.path.join('Personagens', 'Tras1.png')),(scale_hero)),
+                    pygame.transform.scale(pygame.image.load(os.path.join('Personagens', 'Tras2.png')),(scale_hero)),
+                    pygame.transform.scale(pygame.image.load(os.path.join('Personagens', 'Tras3.png')),(scale_hero)),
+                    pygame.transform.scale(pygame.image.load(os.path.join('Personagens', 'Tras4.png')),(scale_hero))
                     ]
-            right = [pygame.image.load(os.path.join('Personagens', 'Frente1.png')),
-                     pygame.image.load(os.path.join('Personagens', 'Frente2.png')),
-                     pygame.image.load(os.path.join('Personagens', 'Frente3.png')),
-                     pygame.image.load(os.path.join('Personagens', 'Frente4.png'))
+            right = [pygame.transform.scale(pygame.image.load(os.path.join('Personagens', 'Frente1.png')),(scale_hero)),
+                     pygame.transform.scale(pygame.image.load(os.path.join('Personagens', 'Frente2.png')),(scale_hero)),
+                     pygame.transform.scale(pygame.image.load(os.path.join('Personagens', 'Frente3.png')),(scale_hero)),
+                     pygame.transform.scale(pygame.image.load(os.path.join('Personagens', 'Frente4.png')),(scale_hero))
                      ]
             bullet_img = pygame.transform.scale(pygame.image.load(os.path.join('Bullets', 'bullet.png')), (10, 10))
             x = 100
@@ -174,15 +175,16 @@ class Game():
                     return not (self.x >= 0 and self.x <= larguraTela)
 
             # INIMIGO ----------------------------------------------------------------------------------------
-            left_enemy = [pygame.image.load(os.path.join('Inimigos', 'T1.png')),
-                          pygame.image.load(os.path.join('Inimigos', 'T2.png')),
-                          pygame.image.load(os.path.join('Inimigos', 'T3.png')),
-                          pygame.image.load(os.path.join('Inimigos', 'T4.png'))
+            scale_enimy=[100,100]
+            left_enemy = [pygame.transform.scale(pygame.image.load(os.path.join('Inimigos', 'T1.png')),(scale_enimy)),
+                          pygame.transform.scale(pygame.image.load(os.path.join('Inimigos', 'T2.png')),(scale_enimy)),
+                          pygame.transform.scale(pygame.image.load(os.path.join('Inimigos', 'T3.png')),(scale_enimy)),
+                          pygame.transform.scale(pygame.image.load(os.path.join('Inimigos', 'T4.png')),(scale_enimy))
                           ]
-            right_enemy = [pygame.image.load(os.path.join('Inimigos', 'F1.png')),
-                           pygame.image.load(os.path.join('Inimigos', 'F2.png')),
-                           pygame.image.load(os.path.join('Inimigos', 'F3.png')),
-                           pygame.image.load(os.path.join('Inimigos', 'F4.png'))
+            right_enemy = [pygame.transform.scale(pygame.image.load(os.path.join('Inimigos', 'F1.png')),(scale_enimy)),
+                           pygame.transform.scale(pygame.image.load(os.path.join('Inimigos', 'F2.png')),(scale_enimy)),
+                           pygame.transform.scale(pygame.image.load(os.path.join('Inimigos', 'F3.png')),(scale_enimy)),
+                           pygame.transform.scale(pygame.image.load(os.path.join('Inimigos', 'F4.png')),(scale_enimy))
                            ]
 
             class Enemy:
