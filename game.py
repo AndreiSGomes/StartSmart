@@ -32,7 +32,7 @@ class Game():
             metadeAltura = alturaTela / 2
             areaTela = larguraTela * alturaTela
             tela = pygame.display.set_mode((larguraTela, alturaTela))
-            bg = pygame.image.load("Cenario/cenario.png").convert()
+            bg = pygame.image.load("Cenario/cenario.gif")
             background = pygame.transform.scale(bg, (larguraTela, alturaTela))
             pygame.display.set_caption("War C-19")
 
@@ -42,20 +42,20 @@ class Game():
             BLACK = (0, 0, 0)
 
             # # # MUSICA -----------------------------------------------------------------------------------
-            # pygame.mixer.music.load('Musicas/Wandering-the-Streets_Looping.mp3')
-            # pygame.mixer.music.play()
-            # pygame.event.wait()
+            pygame.mixer.music.load('Musicas/start.wav')
+            pygame.mixer.music.play(-1)
 
             # # # PERSONAGEM ---------------------------------------------------------------------------------
-            left = [pygame.image.load(os.path.join('Personagens', 'Tras1.png')),
-                    pygame.image.load(os.path.join('Personagens', 'Tras2.png')),
-                    pygame.image.load(os.path.join('Personagens', 'Tras3.png')),
-                    pygame.image.load(os.path.join('Personagens', 'Tras4.png'))
+            scale_hero=[100,100] 
+            left = [pygame.transform.scale(pygame.image.load(os.path.join('Personagens', 'Tras1.png')),(scale_hero)),
+                    pygame.transform.scale(pygame.image.load(os.path.join('Personagens', 'Tras2.png')),(scale_hero)),
+                    pygame.transform.scale(pygame.image.load(os.path.join('Personagens', 'Tras3.png')),(scale_hero)),
+                    pygame.transform.scale(pygame.image.load(os.path.join('Personagens', 'Tras4.png')),(scale_hero))
                     ]
-            right = [pygame.image.load(os.path.join('Personagens', 'Frente1.png')),
-                     pygame.image.load(os.path.join('Personagens', 'Frente2.png')),
-                     pygame.image.load(os.path.join('Personagens', 'Frente3.png')),
-                     pygame.image.load(os.path.join('Personagens', 'Frente4.png'))
+            right = [pygame.transform.scale(pygame.image.load(os.path.join('Personagens', 'Frente1.png')),(scale_hero)),
+                     pygame.transform.scale(pygame.image.load(os.path.join('Personagens', 'Frente2.png')),(scale_hero)),
+                     pygame.transform.scale(pygame.image.load(os.path.join('Personagens', 'Frente3.png')),(scale_hero)),
+                     pygame.transform.scale(pygame.image.load(os.path.join('Personagens', 'Frente4.png')),(scale_hero))
                      ]
             bullet_img = pygame.transform.scale(pygame.image.load(os.path.join('Bullets', 'bullet.png')), (10, 10))
             x = 100
@@ -71,7 +71,7 @@ class Game():
                     # walk
                     self.x = x
                     self.y = y
-                    self.velx = 5
+                    self.velx = 6
                     self.vely = 15
                     self.face_right = True
                     self.face_left = False
@@ -115,6 +115,8 @@ class Game():
 
                 def jump_motion(self, userInput):
                     if userInput[pygame.K_SPACE] and self.jump is False:
+                        jumpvar = pygame.mixer.Sound('Musicas/jump.wav')
+                        jumpvar.play()
                         self.jump = True
                     if self.jump:
                         self.y -= self.vely * 2
@@ -139,6 +141,8 @@ class Game():
                     self.hit()
                     self.cooldown()
                     if (userInput[pygame.K_f] and self.cool_down_count == 0):
+                        shootvar=pygame.mixer.Sound('Musicas/shot.wav')
+                        shootvar.play()
                         bullet = Bullet(self.x, self.y, self.direction())
                         self.bullets.append(bullet)
                         self.cool_down_count = 1
@@ -166,23 +170,24 @@ class Game():
 
                 def move(self):
                     if self.direction == 1:
-                        self.x += 11
+                        self.x += 15
                     if self.direction == -1:
-                        self.x -= 11
+                        self.x -= 15
 
                 def off_screen(self):
                     return not (self.x >= 0 and self.x <= larguraTela)
 
             # INIMIGO ----------------------------------------------------------------------------------------
-            left_enemy = [pygame.image.load(os.path.join('Inimigos', 'T1.png')),
-                          pygame.image.load(os.path.join('Inimigos', 'T2.png')),
-                          pygame.image.load(os.path.join('Inimigos', 'T3.png')),
-                          pygame.image.load(os.path.join('Inimigos', 'T4.png'))
+            scale_enimy=[100,100]
+            left_enemy = [pygame.transform.scale(pygame.image.load(os.path.join('Inimigos', 'T1.png')),(scale_enimy)),
+                          pygame.transform.scale(pygame.image.load(os.path.join('Inimigos', 'T2.png')),(scale_enimy)),
+                          pygame.transform.scale(pygame.image.load(os.path.join('Inimigos', 'T3.png')),(scale_enimy)),
+                          pygame.transform.scale(pygame.image.load(os.path.join('Inimigos', 'T4.png')),(scale_enimy))
                           ]
-            right_enemy = [pygame.image.load(os.path.join('Inimigos', 'F1.png')),
-                           pygame.image.load(os.path.join('Inimigos', 'F2.png')),
-                           pygame.image.load(os.path.join('Inimigos', 'F3.png')),
-                           pygame.image.load(os.path.join('Inimigos', 'F4.png'))
+            right_enemy = [pygame.transform.scale(pygame.image.load(os.path.join('Inimigos', 'F1.png')),(scale_enimy)),
+                           pygame.transform.scale(pygame.image.load(os.path.join('Inimigos', 'F2.png')),(scale_enimy)),
+                           pygame.transform.scale(pygame.image.load(os.path.join('Inimigos', 'F3.png')),(scale_enimy)),
+                           pygame.transform.scale(pygame.image.load(os.path.join('Inimigos', 'F4.png')),(scale_enimy))
                            ]
 
             class Enemy:
@@ -214,9 +219,9 @@ class Game():
                 def move(self):
                     self.hit()
                     if self.direction == left:
-                        self.x -= 6
+                        self.x -= 10
                     if self.direction == right:
-                        self.x += 6
+                        self.x += 9
 
                 def hit(self):
                     if player.hitbox[0] < enemy.x + 32 < player.hitbox[0] + player.hitbox[2] and player.hitbox[1] < enemy.y + 32 < player.hitbox[1] + player.hitbox[3]:
@@ -246,8 +251,8 @@ class Game():
                 # Player Health
                 if player.alive == False:
                     tela.fill((0, 0, 0))
-                    font = pygame.font.Font('freesansbold.ttf', 32)
-                    text = font.render('GAME OVER!  Aperte R para reiniciar', True, (255, 255, 255))
+                    font = pygame.font.Font('fonte/PressStart2P-vaV7.ttf', 32)
+                    text = font.render('GAME OVER! precione R', True, (138, 47, 47))
                     textRect = text.get_rect()
                     textRect.center = (metadeLargura, metadeAltura)
                     tela.blit(text, textRect)
@@ -255,9 +260,9 @@ class Game():
                         player.alive = True
                         player.lives = 1
                         player.health = 40
-                font = pygame.font.Font('freesansbold.ttf', 32)
-                text = font.render('Curados: ' + str(kills) + '       Vidas: ' + str(player.lives), True, (0, 0, 0))
-                tela.blit(text, (600, 20))
+                font = pygame.font.Font('fonte/PressStart2P-vaV7.ttf', 27)
+                text = font.render('Curados: ' + str(kills) + '  Vidas: ' + str(player.lives), True, (189, 178, 209))
+                tela.blit(text, (230, 20))
 
                 pygame.display.update()
                 CLOCK.tick(FPS)
