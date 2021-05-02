@@ -1,6 +1,6 @@
 from game import Game #Pegando o arquivo game e importando a classe Game
 
-g = Game() #facilitar a bagaça
+g = Game() #facilitar a bagaça!
 
 while g.running:
     g.curr_menu.display_menu()
