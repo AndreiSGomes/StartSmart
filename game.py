@@ -114,7 +114,7 @@ class Game():
                         self.stepIndex += 1
 
                 def jump_motion(self, userInput):
-                    if userInput[pygame.K_SPACE] and self.jump is False:
+                    if userInput[pygame.K_UP] and self.jump is False:
                         jumpvar = pygame.mixer.Sound('Musicas/jump.wav')
                         jumpvar.play()
                         self.jump = True
