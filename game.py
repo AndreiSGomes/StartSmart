@@ -305,7 +305,8 @@ class Game():
                         enemies.remove(enemy)
                     if enemy.health <= 0:
                         kills += 1
-
+                        if kills % 10 == 0:
+                            player.lives += 1
 
                 # Draw game in windows
                 draw_game()
