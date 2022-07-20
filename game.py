@@ -57,7 +57,7 @@ class Game():
                      pygame.transform.scale(pygame.image.load(os.path.join('Personagens', 'Frente3.png')),(scale_hero)),
                      pygame.transform.scale(pygame.image.load(os.path.join('Personagens', 'Frente4.png')),(scale_hero))
                      ]
-            bullet_img = pygame.transform.scale(pygame.image.load(os.path.join('Bullets', 'bullet.png')), (10, 10))
+            bullet_img = pygame.transform.scale(pygame.image.load(os.path.join('Bullets', 'bullet.png')), (21, 21))
             x = 100
             y = 395
             radius = 80
@@ -72,7 +72,7 @@ class Game():
                     self.x = x
                     self.y = y
                     self.velx = 6
-                    self.vely = 15
+                    self.vely = 13
                     self.face_right = True
                     self.face_left = False
                     self.stepIndex = 0
@@ -102,7 +102,7 @@ class Game():
                 def draw(self, tela):
                     self.hitbox = (self.x, self.y, 78, 90)
                     pygame.draw.rect(tela, (255, 0, 0), (self.x + 30, self.y - 10, 40, 10))
-                    if self.health >= 0:
+                    if self.health >= 1:
                         pygame.draw.rect(tela, (0, 255, 0), (self.x + 30, self.y - 10, self.health, 10))
                     if self.stepIndex >= 16:
                         self.stepIndex = 0
@@ -114,16 +114,16 @@ class Game():
                         self.stepIndex += 1
 
                 def jump_motion(self, userInput):
-                    if userInput[pygame.K_SPACE] and self.jump is False:
+                    if userInput[pygame.K_UP] and self.jump is False:
                         jumpvar = pygame.mixer.Sound('Musicas/jump.wav')
                         jumpvar.play()
                         self.jump = True
                     if self.jump:
                         self.y -= self.vely * 2
                         self.vely -= 1
-                    if self.vely < -15:
+                    if self.vely < -13:
                         self.jump = False
-                        self.vely = 15
+                        self.vely = 13
 
                 def direction(self):
                     if self.face_right:
@@ -132,7 +132,7 @@ class Game():
                         return -1
 
                 def cooldown(self):
-                    if self.cool_down_count >= 20:
+                    if self.cool_down_count >= 19:
                         self.cool_down_count = 0
                     elif self.cool_down_count > 0:
                         self.cool_down_count += 1
@@ -145,7 +145,7 @@ class Game():
                         shootvar.play()
                         bullet = Bullet(self.x, self.y, self.direction())
                         self.bullets.append(bullet)
-                        self.cool_down_count = 1
+                        self.cool_down_count = 2
                     for bullet in self.bullets:
                         bullet.move()
                         if bullet.off_screen():
@@ -162,7 +162,7 @@ class Game():
             class Bullet:
                 def __init__(self, x, y, direction):
                     self.x = x + 70
-                    self.y = y + 30
+                    self.y = y + 55
                     self.direction = direction
 
                 def draw_bullet(self):
@@ -170,9 +170,9 @@ class Game():
 
                 def move(self):
                     if self.direction == 1:
-                        self.x += 15
+                        self.x += 18
                     if self.direction == -1:
-                        self.x -= 15
+                        self.x -= 18
 
                 def off_screen(self):
                     return not (self.x >= 0 and self.x <= larguraTela)
@@ -218,6 +218,7 @@ class Game():
 
                 def move(self):
                     self.hit()
+                    self.gameControler()
                     if self.direction == left:
                         self.x -= 10
                     if self.direction == right:
@@ -227,12 +228,31 @@ class Game():
                     if player.hitbox[0] < enemy.x + 32 < player.hitbox[0] + player.hitbox[2] and player.hitbox[1] < enemy.y + 32 < player.hitbox[1] + player.hitbox[3]:
                         if player.health > 0:
                             player.health -= 1
-                            if player.health == 0 and player.lives > 0:
+                            if player.health == 0 and player.lives > 1:
                                 player.lives -= 1
                                 player.health = 40
-                            elif player.health == 0 and player.lives == 0:
+                            elif player.health == 0 and player.lives == 1:
+                                player.lives -= 1
                                 player.alive = False
 
+                def gameControler(self):
+                    if kills >= 10 and self.direction == right:
+                        enemy.x += 1.5
+                    elif kills >= 10 and self.direction == left:
+                        enemy.x -= 1.5   
+                    if kills >= 20 and self.direction == right:
+                        enemy.x += 2
+                    elif kills >= 20 and self.direction == left:
+                        enemy.x -= 2
+                    if kills >= 30 and self.direction == right:
+                        enemy.x += 1.5
+                    elif kills >= 30 and self.direction == left:
+                        enemy.x -= 1.5 
+                    if kills >= 40 and self.direction == right:
+                        enemy.x += 1
+                    elif kills >= 40 and self.direction == left:
+                        enemy.x -= 1      
+                
                 def off_screen(self):
                     return not (self.x >= -80 and self.x <= larguraTela + 30)
 
@@ -252,7 +272,7 @@ class Game():
                 if player.alive == False:
                     tela.fill((0, 0, 0))
                     font = pygame.font.Font('fonte/PressStart2P-vaV7.ttf', 32)
-                    text = font.render('GAME OVER! precione R', True, (138, 47, 47))
+                    text = font.render('GAME OVER! Press R to restart', True, (138, 47, 47))
                     textRect = text.get_rect()
                     textRect.center = (metadeLargura, metadeAltura)
                     tela.blit(text, textRect)
@@ -261,7 +281,7 @@ class Game():
                         player.lives = 1
                         player.health = 40
                 font = pygame.font.Font('fonte/PressStart2P-vaV7.ttf', 27)
-                text = font.render('Curados: ' + str(kills) + '  Vidas: ' + str(player.lives), True, (189, 178, 209))
+                text = font.render('Kills: ' + str(kills) + '  Lives: ' + str(player.lives), True, (189, 178, 209))
                 tela.blit(text, (230, 20))
 
                 pygame.display.update()
@@ -305,7 +325,8 @@ class Game():
                         enemies.remove(enemy)
                     if enemy.health <= 0:
                         kills += 1
-
+                        if kills % 10 == 0:
+                            player.lives += 1
 
                 # Draw game in windows
                 draw_game()
